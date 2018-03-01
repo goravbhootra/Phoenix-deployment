@@ -1,0 +1,31 @@
+FROM elixir162:latest
+MAINTAINER Gorav Bhootra <email@gorav.in>
+
+#### Phoenix
+
+RUN apt-get update
+RUN apt-get upgrade -y
+RUN apt-get dist-upgrade -y
+RUN apt-get install -y locales
+# set locale
+RUN locale-gen en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+# Install NodeJS 9.x and NPM
+RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
+RUN apt-get install -y -q nodejs
+RUN npm install npm -g --no-progress
+
+# Install hex and rebar
+RUN mix local.hex --force
+RUN mix local.rebar --force
+
+# Install the Phoenix framework itself
+RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force
+
+# Set /app as workdir
+RUN mkdir /app
+WORKDIR /app
+CMD ["/bin/sh"]
