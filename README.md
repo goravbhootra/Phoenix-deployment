@@ -4,11 +4,19 @@ Phoenix 1.3 deployment from Mac (Local development) to Ubuntu server. Docker is 
 build ubuntu_phoenix-1.3.0:latest image with
 ubuntu 16.04 + erlang 20.2.4 + elixir 1.6.2 + phoenix 1.3
 
+use the image in consecutive step to reach the final image:
+
+```bash
+$ docker build --rm -t ubuntu_1604_curl -f Dockerfile.curl .
+```
+
+```bash
+$ docker build --rm -t ubuntu_1604_scm -f Dockerfile.scm .
+```
+
 ```bash
 $ docker build --rm -t ubuntu_1604_processed -f Dockerfile.ubuntu .
 ```
-
-use the image built in previous step and build image of the current app
 
 ```bash
 $ docker build --rm -t erlang2024 -f Dockerfile.erlang .
