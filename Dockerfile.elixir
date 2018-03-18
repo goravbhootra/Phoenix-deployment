@@ -1,10 +1,10 @@
-FROM erlang2024:latest
+FROM erlang2031:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 #### Elixir
 
 # elixir expects utf8.
-ENV ELIXIR_VERSION="v1.6.2" \
+ENV ELIXIR_VERSION="v1.6.3" \
   LANG=C.UTF-8
 
 RUN set -xe \

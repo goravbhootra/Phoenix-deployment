@@ -19,22 +19,16 @@ $ docker build --rm -t ubuntu_1604_processed -f Dockerfile.ubuntu .
 ```
 
 ```bash
-$ docker build --rm -t erlang2024 -f Dockerfile.erlang .
+$ docker build --rm -t erlang2031 -f Dockerfile.erlang .
 ```
-
-use the image built in previous step and build image of the current app
 
 ```bash
-$ docker build --rm -t elixir162 -f Dockerfile.elixir .
+$ docker build --rm -t elixir163 -f Dockerfile.elixir .
 ```
-
-use the image built in previous step and build image of the current app
 
 ```bash
 $ docker build --rm -t phoenix130 -f Dockerfile.phoenix .
 ```
-
-use the image built in previous step and build image of the current app
 
 ```bash
 $ docker build --rm -t my_app -f Dockerfile.build .

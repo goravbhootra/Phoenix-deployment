@@ -2,13 +2,12 @@ FROM ubuntu_1604_processed:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 #### Erlang
-ENV OTP_VERSION="20.2.4"
+ENV OTP_VERSION="20.3.1"
 
 # We'll install the build dependencies for erlang-odbc along with the erlang
 # build process:
 RUN set -xe \
   && OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" \
-  && OTP_DOWNLOAD_SHA256="82072944a1278ff992867b84da7499c64e34e8a853804f4e7a557235308c79d7" \
   && runtimeDeps='libodbc1 \
       libsctp1 \
       libwxgtk3.0' \
@@ -19,7 +18,6 @@ RUN set -xe \
   && apt-get install -y --no-install-recommends $runtimeDeps \
   && apt-get install -y --no-install-recommends $buildDeps \
   && curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
-  && echo "$OTP_DOWNLOAD_SHA256  otp-src.tar.gz" | sha256sum -c - \
   && export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" \
   && mkdir -vp $ERL_TOP \
   && tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 \
