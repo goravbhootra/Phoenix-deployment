@@ -17,5 +17,5 @@ RUN set -ex; \
 			dirmngr \
 		; \
 		rm -rf /var/lib/apt/lists/*; \
-fi
+	fi
 # -----------
