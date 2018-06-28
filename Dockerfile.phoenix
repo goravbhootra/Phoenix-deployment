@@ -22,8 +22,9 @@ ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
 # Install NodeJS 9.x and NPM
-RUN curl -sL https://deb.nodesource.com/setup_9.x | bash -
-RUN apt-get install -y -q nodejs
+# https://github.com/nodesource/distributions
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y nodejs
 RUN npm install npm -g --no-progress
 
 # Install hex and rebar
