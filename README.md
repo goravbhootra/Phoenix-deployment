@@ -23,7 +23,7 @@ $ docker build --rm -t erlang2031 -f Dockerfile.erlang .
 ```
 
 ```bash
-$ docker build --rm -t elixir165 -f Dockerfile.elixir .
+$ docker build --rm -t elixir166 -f Dockerfile.elixir .
 ```
 
 ```bash
