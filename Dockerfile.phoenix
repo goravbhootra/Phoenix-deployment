@@ -25,7 +25,8 @@ ENV LC_ALL en_US.UTF-8
 # https://github.com/nodesource/distributions
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
-RUN npm install npm -g --no-progress
+# RUN npm install npm -g --no-progress
+RUN npm install npm@6.1.0 -g --no-progress
 
 # Install hex and rebar
 RUN mix local.hex --force
