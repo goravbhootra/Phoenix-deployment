@@ -27,7 +27,7 @@ $ docker build --rm -t elixir166 -f Dockerfile.elixir .
 ```
 
 ```bash
-$ docker build --rm -t phoenix130 -f Dockerfile.phoenix .
+$ docker build --rm -t elixir_mix -f Dockerfile.mix .
 ```
 
 ---

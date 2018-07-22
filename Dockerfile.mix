@@ -26,14 +26,18 @@ ENV LC_ALL en_US.UTF-8
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
 # RUN npm install npm -g --no-progress
-RUN npm install npm@6.1.0 -g --no-progress
+RUN npm install npm@6.2.0 -g --no-progress
 
 # Install hex and rebar
 RUN mix local.hex --force
 RUN mix local.rebar --force
 
 # Install the Phoenix framework itself
-RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force
+# RUN mix archive.uninstall phx_new
+# RUN mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez --force
+# RUN git clone https://github.com/phoenixframework/phoenix
+# RUN cd phoenix/installer
+# RUN MIX_ENV=prod mix do archive.build, archive.install
 
 # Set /app as workdir
 RUN mkdir /app
