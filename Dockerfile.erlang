@@ -2,7 +2,7 @@ FROM ubuntu_1604_processed:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 #### Erlang
-ENV OTP_VERSION="21.0.1"
+ENV OTP_VERSION="21.0.4"
 
 # We'll install the build dependencies for erlang-odbc along with the erlang
 # build process:

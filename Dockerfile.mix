@@ -21,7 +21,7 @@ ENV LANG=en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
-# Install NodeJS 9.x and NPM
+# Install NodeJS 10.x and NPM
 # https://github.com/nodesource/distributions
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y nodejs
