@@ -1,4 +1,4 @@
-FROM erlang2108:latest
+FROM erlang2111:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 #### Elixir
