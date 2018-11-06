@@ -4,7 +4,7 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 #### Elixir
 
 # elixir expects utf8.
-ENV ELIXIR_VERSION="v1.7.3" \
+ENV ELIXIR_VERSION="v1.7.4" \
   LANG=C.UTF-8
 
 RUN set -xe \

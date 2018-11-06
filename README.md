@@ -23,11 +23,11 @@ $ docker build --rm -t erlang2111 -f Dockerfile.erlang .
 ```
 
 ```bash
-$ docker build --rm -t elixir173 -f Dockerfile.elixir .
+$ docker build --rm -t elixir174 -f Dockerfile.elixir .
 ```
 
 ```bash
-$ docker build --rm -t elixir173_mix -f Dockerfile.mix .
+$ docker build --rm -t elixir174_mix -f Dockerfile.mix .
 ```
 
 ---
