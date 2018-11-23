@@ -1,8 +1,8 @@
-# Phoenix-1.3-deployment
-Phoenix 1.3 deployment from Mac (Local development) to Ubuntu server. Docker is used in local machine for generating the build files including ERTS 9.2.1. Build files are pushed to Ubuntu Server and run. Docker is not used on remote server.
+# Phoenix-1.4-deployment
+Phoenix 1.4 deployment from Mac (Local development) to Ubuntu server. Docker is used in local machine for generating the build files including ERTS 10.1.1. Build files are pushed to Ubuntu Server and run. Docker is not used on remote server.
 
-build ubuntu_phoenix-1.3.0:latest image with
-ubuntu 16.04 + erlang 21.0.4 + elixir 1.6.6 + phoenix master branch
+build ubuntu_phoenix-1.4.0:latest image with
+ubuntu 16.04 + erlang 21.1.1 + elixir 1.7.4
 
 use the image in consecutive step to reach the final image:
 
