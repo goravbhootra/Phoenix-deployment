@@ -2,7 +2,7 @@
 Phoenix 1.4 deployment from Mac (Local development) to Ubuntu server. Docker is used in local machine for generating the build files including ERTS 10.1.1. Build files are pushed to Ubuntu Server and run. Docker is not used on remote server.
 
 build ubuntu_phoenix-1.4.0:latest image with
-ubuntu 16.04 + erlang 21.1.1 + elixir 1.7.4
+ubuntu 16.04 + erlang 21.2.6 + elixir 1.8.1
 
 use the image in consecutive step to reach the final image:
 
@@ -19,15 +19,15 @@ $ docker build --rm -t ubuntu_1604_processed -f Dockerfile.ubuntu .
 ```
 
 ```bash
-$ docker build --rm -t erlang2122 -f Dockerfile.erlang .
+$ docker build --rm -t erlang2126_1604 -f Dockerfile.erlang .
 ```
 
 ```bash
-$ docker build --rm -t elixir174 -f Dockerfile.elixir .
+$ docker build --rm -t elixir181 -f Dockerfile.elixir .
 ```
 
 ```bash
-$ docker build --rm -t elixir174_mix -f Dockerfile.mix .
+$ docker build --rm -t elixir181_mix -f Dockerfile.mix .
 ```
 
 ---

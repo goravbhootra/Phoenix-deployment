@@ -19,7 +19,7 @@ $ docker build --rm -t ubuntu_18041_processed -f Dockerfile.ubuntu .
 ```
 
 ```bash
-$ docker build --rm -t erlang2124 -f Dockerfile.erlang .
+$ docker build --rm -t erlang2126 -f Dockerfile.erlang .
 ```
 
 ```bash
