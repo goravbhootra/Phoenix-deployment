@@ -1,4 +1,4 @@
-FROM elixir180:latest
+FROM elixir181_1804:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
@@ -24,7 +24,7 @@ ENV LC_ALL en_US.UTF-8
 # Install NodeJS 10.x and NPM
 # https://github.com/nodesource/distributions
 RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y nodejs
+RUN apt-get install -y gcc g++ make nodejs
 
 RUN npm install npm@6.4.1 -g --no-progress
 
