@@ -1,6 +1,12 @@
 FROM ubuntu_18041_processed:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
+# Install Java compiler for Erlang
+# Install NodeJS 10.x and NPM
+# https://github.com/nodesource/distributions
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
+RUN apt-get install -y gcc g++ make nodejs
+
 #### Erlang
 ENV OTP_VERSION="21.2.6"
 

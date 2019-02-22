@@ -1,4 +1,4 @@
-FROM elixir181:latest
+FROM elixir181_1604:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
@@ -30,13 +30,13 @@ RUN npm install npm@6.4.1 -g --no-progress
 
 # These are optional - installed to avoid installation during every deployment
 RUN npm install jquery@3.3.1 -g --no-progress
-RUN npm install popper.js@1.14.6 -g --no-progress
-RUN npm install bootstrap@4.1.3 -g --no-progress
-RUN npm install webpack@4.26.0 -g --no-progress
+RUN npm install popper.js@1.14.7 -g --no-progress
+RUN npm install bootstrap@4.3.1 -g --no-progress
+RUN npm install webpack@4.4.0 -g --no-progress
 RUN npm install node-gyp@3.8.0 -g --no-progress
-RUN npm install @fortawesome/fontawesome-free@5.5.0 -g --no-progress
-# node-sass@4.10.0 throwing permission errors, hence, added unsafe-perm. It worked fine with 4.9x
-RUN npm install node-sass@4.10.0 -g --no-progress --unsafe-perm
+RUN npm install @fortawesome/fontawesome-free@5.7.2 -g --no-progress
+# If node thros permission error, add --unsafe-perm below
+RUN npm install node-sass@4.11.0 -g --no-progress --unsafe-perm
 
 # Install hex and rebar
 RUN mix local.hex --force
