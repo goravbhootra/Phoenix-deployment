@@ -6,6 +6,11 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 
 RUN rm -rf /var/lib/apt/lists/* && apt-get clean
 
+# added because of error:
+# http://archive.ubuntu.com/ubuntu/pool/main/libw/libwmf/libwmf0.2-7_0.2.8.4-10.5ubuntu1_amd64.deb  Hash Sum mismatch
+# not sure if it really helped or whether it just worked on multiple attempts. needs to be verified
+RUN apt-get -y install --fix-missing
+
 RUN set -ex; \
   apt-get update; \
   apt-get install -y --no-install-recommends \
