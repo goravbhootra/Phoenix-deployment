@@ -6,10 +6,10 @@ ubuntu 18.04 + erlang 21.2.4 + elixir 1.8.0
 
 use the image in consecutive step to reach the final image:
 
-docker build --rm -t ubuntu_18041_curl -f Dockerfile.curl . && \
-docker build --rm -t ubuntu_18041_scm -f Dockerfile.scm . && \
-docker build --rm -t ubuntu_18041_processed -f Dockerfile.ubuntu . && \
-docker build --rm -t erlang2126 -f Dockerfile.erlang . && \
+docker build --rm -t ubuntu_18042_curl -f Dockerfile.curl . && \
+docker build --rm -t ubuntu_18042_scm -f Dockerfile.scm . && \
+docker build --rm -t ubuntu_18042_processed -f Dockerfile.ubuntu . && \
+docker build --rm -t erlang2134 -f Dockerfile.erlang . && \
 docker build --rm -t elixir181 -f Dockerfile.elixir . && \
 docker build --rm -t elixir181 -f Dockerfile.mix .
 
