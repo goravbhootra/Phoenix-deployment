@@ -1,4 +1,4 @@
-FROM elixir181:latest
+FROM elixir190:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
@@ -29,14 +29,14 @@ RUN apt-get install -y nodejs
 RUN npm install npm@latest -g --no-progress
 
 # These are optional - installed to avoid installation during every deployment
-RUN npm install jquery@3.3.1 -g --no-progress
+RUN npm install jquery@3.4.1 -g --no-progress
 RUN npm install popper.js@1.14.7 -g --no-progress
 RUN npm install bootstrap@4.3.1 -g --no-progress
 RUN npm install webpack@4.4.0 -g --no-progress
 RUN npm install node-gyp@3.8.0 -g --no-progress
 RUN npm install @fortawesome/fontawesome-free@5.7.2 -g --no-progress
 # If node thros permission error, add --unsafe-perm below
-RUN npm install node-sass@4.11.0 -g --no-progress --unsafe-perm
+RUN npm install node-sass@4.12.0 -g --no-progress --unsafe-perm
 
 # Install hex and rebar
 RUN mix local.hex --force
