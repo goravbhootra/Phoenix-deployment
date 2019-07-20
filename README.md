@@ -10,8 +10,8 @@ docker build --rm -t ubuntu_18042_curl -f Dockerfile.curl . && \
 docker build --rm -t ubuntu_18042_scm -f Dockerfile.scm . && \
 docker build --rm -t ubuntu_18042_processed -f Dockerfile.ubuntu . && \
 docker build --rm -t erlang2204 -f Dockerfile.erlang . && \
-docker build --rm -t elixir190 -f Dockerfile.elixir . && \
-docker build --rm -t elixir190_mix -f Dockerfile.mix .
+docker build --rm -t elixir191 -f Dockerfile.elixir . && \
+docker build --rm -t elixir191_mix -f Dockerfile.mix .
 
 ```bash
 $ docker build --rm -t ubuntu_18041_curl -f Dockerfile.curl .
