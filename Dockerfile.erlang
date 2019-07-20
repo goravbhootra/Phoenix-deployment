@@ -8,7 +8,7 @@ RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
 RUN apt-get install -y gcc g++ make nodejs
 
 #### Erlang
-ENV OTP_VERSION="22.0.4"
+ENV OTP_VERSION="22.0.7"
 
 # We'll install the build dependencies for erlang-odbc along with the erlang
 # build process:

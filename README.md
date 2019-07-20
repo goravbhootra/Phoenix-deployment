@@ -9,7 +9,7 @@ use the image in consecutive step to reach the final image:
 docker build --rm -t ubuntu_18042_curl -f Dockerfile.curl . && \
 docker build --rm -t ubuntu_18042_scm -f Dockerfile.scm . && \
 docker build --rm -t ubuntu_18042_processed -f Dockerfile.ubuntu . && \
-docker build --rm -t erlang2204 -f Dockerfile.erlang . && \
+docker build --rm -t erlang2207 -f Dockerfile.erlang . && \
 docker build --rm -t elixir191 -f Dockerfile.elixir . && \
 docker build --rm -t elixir191_mix -f Dockerfile.mix .
 
