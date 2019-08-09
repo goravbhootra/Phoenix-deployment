@@ -3,9 +3,7 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Install Java compiler for Erlang
 # Install NodeJS 10.x and NPM
-# https://github.com/nodesource/distributions
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash -
-RUN apt-get install -y gcc g++ make nodejs
+RUN apt-get install -y gcc g++ make
 
 #### Erlang
 ENV OTP_VERSION="22.0.7"
