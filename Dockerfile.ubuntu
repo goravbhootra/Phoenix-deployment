@@ -1,6 +1,8 @@
 FROM ubuntu_18042_scm:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
+ENV REFRESHED_AT=2019-09-13
+
 # https://github.com/docker-library/buildpack-deps/blob/master/bionic/Dockerfile
 
 RUN rm -rf /var/lib/apt/lists/* && apt-get clean
