@@ -1,11 +1,11 @@
-FROM elixir191:latest
+FROM elixir192:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT=2019-09-14 \
+ENV REFRESHED_AT=2019-10-28 \
     HOME=/opt/build \
     # Set this so that CTRL+G works properly
     TERM=xterm
