@@ -5,7 +5,7 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT=2019-10-28 \
+ENV REFRESHED_AT=2019-11-05 \
     HOME=/opt/build \
     # Set this so that CTRL+G works properly
     TERM=xterm
@@ -51,7 +51,7 @@ RUN npm install --save @fortawesome/fontawesome-free@5.11.2 --no-progress
 RUN npm install --save-dev webpack@4.41.2 --no-progress
 RUN npm install --save-dev webpack-cli@3.3.9 --no-progress
 # If node throws permission error, add --unsafe-perm below
-# RUN npm install --save-dev node-sass@4.12.0 --no-progress --unsafe-perm
+RUN npm install --save-dev node-sass@4.13.0 --no-progress --unsafe-perm
 
 WORKDIR /opt/build
 
