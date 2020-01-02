@@ -5,7 +5,7 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT=2019-12-23 \
+ENV REFRESHED_AT=2020-01-02 \
     HOME=/opt/build \
     # Set this so that CTRL+G works properly
     TERM=xterm
@@ -35,9 +35,9 @@ WORKDIR /opt/assets
 
 # RUN touch /opt/build/assets/package.json
 
-# Install NodeJS 12.x and NPM
+# Install NodeJS 13.x and NPM
 # https://github.com/nodesource/distributions
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -y nodejs
 
 RUN npm install npm@latest -g --no-progress
@@ -46,10 +46,10 @@ RUN npm install npm@latest -g --no-progress
 RUN npm init --yes
 RUN npm install --save jquery@3.4.1 --no-progress
 RUN npm install --save popper.js@1.16.0 --no-progress
-RUN npm install --save bootstrap@4.3.1 --no-progress
-RUN npm install --save @fortawesome/fontawesome-free@5.11.2 --no-progress
-RUN npm install --save-dev webpack@4.41.2 --no-progress
-RUN npm install --save-dev webpack-cli@3.3.9 --no-progress
+RUN npm install --save bootstrap@4.4.1 --no-progress
+RUN npm install --save @fortawesome/fontawesome-free@5.12.0 --no-progress
+RUN npm install --save-dev webpack@4.41.5 --no-progress
+RUN npm install --save-dev webpack-cli@3.3.10 --no-progress
 # If node throws permission error, add --unsafe-perm below
 RUN npm install --save-dev node-sass@4.13.0 --no-progress --unsafe-perm
 
