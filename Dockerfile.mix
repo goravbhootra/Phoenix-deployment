@@ -47,9 +47,9 @@ RUN npm init --yes
 RUN npm install --save jquery@3.4.1 --no-progress
 RUN npm install --save popper.js@1.16.1 --no-progress
 RUN npm install --save bootstrap@4.4.1 --no-progress
-RUN npm install --save @fortawesome/fontawesome-free@5.12.1 --no-progress
-RUN npm install --save-dev webpack@4.41.5 --no-progress
-RUN npm install --save-dev webpack-cli@3.3.10 --no-progress
+RUN npm install --save @fortawesome/fontawesome-free@5.13.0 --no-progress
+RUN npm install --save-dev webpack@4.42.1 --no-progress
+RUN npm install --save-dev webpack-cli@3.3.11 --no-progress
 # If node throws permission error, add --unsafe-perm below
 RUN npm install --save-dev node-sass@4.13.1 --no-progress --unsafe-perm
 
