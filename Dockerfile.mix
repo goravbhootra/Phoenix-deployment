@@ -1,4 +1,4 @@
-FROM elixir1102:latest
+FROM elixir1103:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # Important!  Update this no-op ENV variable when this Dockerfile
