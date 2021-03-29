@@ -2,27 +2,27 @@
 Phoenix 1.4 deployment from Mac (Local development) to Ubuntu server. Docker is used in local machine for generating the build files including ERTS 11.1.4. Build files are pushed to Ubuntu Server and run. Docker is not used on remote server.
 
 build ubuntu_phoenix-1.4.0:latest image with
-ubuntu 18.04 + erlang 23.1.4 + elixir 1.11.2
+ubuntu bionic + erlang 23.2.7 + elixir 1.11.4
 
 use the image in consecutive step to reach the final image:
 
-docker build --rm -t ubuntu_18042_curl -f Dockerfile.curl . && \
-docker build --rm -t ubuntu_18042_scm -f Dockerfile.scm . && \
-docker build --rm -t ubuntu_18042_processed -f Dockerfile.ubuntu . && \
-docker build --rm -t erlang2314 -f Dockerfile.erlang . && \
-docker build --rm -t elixir1112 -f Dockerfile.elixir . && \
-docker build --rm -t elixir1112_mix -f Dockerfile.mix .
+docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl . && \
+docker build --rm -t ubuntu_1804_scm -f Dockerfile.scm . && \
+docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu . && \
+docker build --rm -t erlang2327 -f Dockerfile.erlang . && \
+docker build --rm -t elixir1114 -f Dockerfile.elixir . && \
+docker build --rm -t elixir1114_mix -f Dockerfile.mix .
 
 ```bash
-$ docker build --rm -t ubuntu_18042_curl -f Dockerfile.curl .
+$ docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl .
 ```
 
 ```bash
-$ docker build --rm -t ubuntu_18042_scm -f Dockerfile.scm .
+$ docker build --rm -t ubuntu_1804_scm -f Dockerfile.scm .
 ```
 
 ```bash
-$ docker build --rm -t ubuntu_18042_processed -f Dockerfile.ubuntu .
+$ docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu .
 ```
 
 ```bash
@@ -58,7 +58,7 @@ $ rsync -rtvzh --progress _build/prod/ user@1.2.3.4:/home/user/_build/prod
 to check the linux versin running in the image:
 
 ```bash
-$ docker run ubuntu_18042_curl:latest cat /etc/lsb-release
+$ docker run ubuntu_1804_curl:latest cat /etc/lsb-release
 ```
 
 

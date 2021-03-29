@@ -1,4 +1,4 @@
-FROM ubuntu_18042_curl:latest
+FROM ubuntu_1804_curl:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # https://github.com/docker-library/buildpack-deps/blob/master/bionic/scm/Dockerfile

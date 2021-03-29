@@ -1,4 +1,4 @@
-FROM ubuntu_18042_scm:latest
+FROM ubuntu_1804_scm:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 ENV REFRESHED_AT=2020-11-22
