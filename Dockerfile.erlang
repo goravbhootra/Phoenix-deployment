@@ -6,8 +6,8 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 RUN apt-get install -y gcc g++ make
 
 #### Erlang
-ENV REFRESHED_AT=2021-08-29 \
-    OTP_VERSION="23.3.4.4"
+ENV REFRESHED_AT=2021-12-20 \
+    OTP_VERSION="24.2"
 
 # We'll install the build dependencies for erlang-odbc along with the erlang
 # build process:
