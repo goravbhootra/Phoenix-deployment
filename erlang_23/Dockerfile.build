@@ -1,0 +1,39 @@
+FROM elixir_mix:latest
+MAINTAINER Gorav Bhootra <email@gorav.in>
+
+RUN apt-get update && apt-get upgrade -y
+
+ENV MIX_ENV=prod
+# ENV REPLACE_OS_VARS=true
+
+COPY . /my_app
+WORKDIR /my_app
+
+# in case deps.get fails repeatedly:
+# ENV HEX_HTTP_CONCURRENCY=1
+# RUN mix deps.clean --all
+# Downlaod the .tar package manually and mv to ~/.hex/packages. Repeat for other timed out packages.
+
+RUN mix do deps.get, compile
+
+# Build assets in production mode:
+WORKDIR /my_app/assets
+RUN npm install && ./node_modules/brunch/bin/brunch build --production
+
+WORKDIR /my_app
+# RUN ls -lha /my_app
+RUN mix phx.digest.clean
+RUN mix phx.digest
+
+# RUN mix release --env=prod --verbose
+# RUN mix release --env=prod --upgrade --verbose
+
+# Read version from mix.exs and store it in .version
+# RUN echo $(cat mix.exs| grep version: | head -n1 | awk -F: '{print $2}' | sed 's/[\",]//g' | tr -d '[[:space:]]') > .version
+# RUN mkdir -p /my_app/target
+# RUN tar xzf /my_app/_build/prod/rel/my_app/releases/$(cat .version)/my_app.tar.gz -C /my_app/target/
+
+# Generate release
+ENTRYPOINT ["mix"]
+CMD ["release", "--env=prod"]
+# CMD ["release", "--env=prod", "--upgrade"]

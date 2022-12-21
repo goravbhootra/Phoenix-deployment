@@ -9,9 +9,9 @@ use the image in consecutive step to reach the final image:
 docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl . && \
 docker build --rm -t ubuntu_1804_scm -f Dockerfile.scm . && \
 docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu . && \
-docker build --rm -t erlang24345 -f Dockerfile.erlang . && \
-docker build --rm -t elixir1140 -f Dockerfile.elixir . && \
-docker build --rm -t elixir1140_mix -f Dockerfile.mix .
+docker build --rm -t erlang23344 -f Dockerfile.erlang . && \
+docker build --rm -t elixir1140_23 -f Dockerfile.elixir . && \
+docker build --rm -t elixir1140_23_mix -f Dockerfile.mix .
 
 ```bash
 $ docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl .
@@ -26,15 +26,15 @@ $ docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu .
 ```
 
 ```bash
-$ docker build --rm -t erlang24345 -f Dockerfile.erlang .
+$ docker build --rm -t erlang23344 -f Dockerfile.erlang .
 ```
 
 ```bash
-$ docker build --rm -t elixir1140 -f Dockerfile.elixir .
+$ docker build --rm -t elixir1140_23 -f Dockerfile.elixir .
 ```
 
 ```bash
-$ docker build --rm -t elixir1140_mix -f Dockerfile.mix .
+$ docker build --rm -t elixir1140_23_mix -f Dockerfile.mix .
 ```
 
 ---
