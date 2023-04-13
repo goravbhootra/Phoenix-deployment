@@ -5,7 +5,7 @@ MAINTAINER Gorav Bhootra <email@gorav.in>
 # is updated with the current date. It will force refresh of all
 # of the base images and things like `apt-get update` won't be using
 # old cached versions when the Dockerfile is built.
-ENV REFRESHED_AT=2022-09-17 \
+ENV REFRESHED_AT=2023-04-11 \
     HOME=/opt/build \
     # Set this so that CTRL+G works properly
     TERM=xterm

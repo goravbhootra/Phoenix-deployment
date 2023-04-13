@@ -6,10 +6,11 @@ ubuntu bionic + erlang 24.3.4.5 + elixir 1.14.0
 
 use the image in consecutive step to reach the final image:
 
+export DOCKER_DEFAULT_PLATFORM=linux/amd64 && \
 docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl . && \
 docker build --rm -t ubuntu_1804_scm -f Dockerfile.scm . && \
 docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu . && \
-docker build --rm -t erlang24345 -f Dockerfile.erlang . && \
+docker buildx build --platform=linux/amd64 --rm -t erlang24345 -f Dockerfile.erlang . && \
 docker build --rm -t elixir1140 -f Dockerfile.elixir . && \
 docker build --rm -t elixir1140_mix -f Dockerfile.mix .
 
