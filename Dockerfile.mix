@@ -46,11 +46,11 @@ RUN npm install yarn --global --no-progress
 # These are optional - installed to avoid installation during every deployment
 RUN yarn init -y
 
-RUN yarn add jquery@3.6.1 --save --non-interactive
-RUN yarn add @popperjs/core@2.11.6 --save --non-interactive
-RUN yarn add bootstrap@5.2.2 --save --non-interactive
-RUN yarn add @fortawesome/fontawesome-free@5.15.4 --save --non-interactive
-RUN yarn add moment@2.29.1 --save --non-interactive
+RUN yarn add jquery@3.6.4 --save --non-interactive
+RUN yarn add @popperjs/core@2.11.7 --save --non-interactive
+RUN yarn add bootstrap@5.2.3 --save --non-interactive
+RUN yarn add @fortawesome/fontawesome-free@6.4.0 --save --non-interactive
+RUN yarn add moment@2.29.4 --save --non-interactive
 RUN yarn add esbuild@0.16.17 --save --non-interactive
 
 WORKDIR /opt/build
