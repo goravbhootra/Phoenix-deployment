@@ -1,4 +1,4 @@
-FROM ubuntu_1804_scm:latest
+FROM --platform=linux/amd64 ubuntu_1804_scm:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 ENV REFRESHED_AT=2023-04-11
@@ -20,7 +20,10 @@ RUN set -ex; \
         imagemagick \
         libbz2-dev \
         libc6-dev \
-        libcurl4-openssl-dev \
+        libcurl4-openssl-dev
+
+RUN set -ex; \
+    apt-get install -y --no-install-recommends \
         libdb-dev \
         libevent-dev \
         libffi-dev \
@@ -33,7 +36,10 @@ RUN set -ex; \
         libmagickcore-dev \
         libmagickwand-dev \
         libncurses5-dev \
-        libncursesw5-dev \
+        libncursesw5-dev
+
+RUN set -ex; \
+    apt-get install -y --no-install-recommends \
         libpng-dev \
         libpq-dev \
         libreadline-dev \

@@ -1,4 +1,4 @@
-FROM ubuntu:bionic
+FROM --platform=linux/amd64 ubuntu:bionic
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 # https://github.com/docker-library/buildpack-deps/blob/master/bionic/curl/Dockerfile

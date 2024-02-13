@@ -1,10 +1,10 @@
-FROM erlang23344:latest
+FROM --platform=linux/amd64 erlang23344:latest
 MAINTAINER Gorav Bhootra <email@gorav.in>
 
 #### Elixir
 
 # elixir expects utf8.
-ENV REFRESHED_AT=2022-12-21 \
+ENV REFRESHED_AT=2024-02-14 \
     ELIXIR_VERSION="v1.14.0" \
     LANG=C.UTF-8
 
