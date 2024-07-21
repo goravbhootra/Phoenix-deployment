@@ -1,0 +1,61 @@
+FROM elixir1157:latest
+MAINTAINER Gorav Bhootra <email@gorav.in>
+
+# Important!  Update this no-op ENV variable when this Dockerfile
+# is updated with the current date. It will force refresh of all
+# of the base images and things like `apt-get update` won't be using
+# old cached versions when the Dockerfile is built.
+ENV REFRESHED_AT=2024-05-14 \
+    HOME=/opt/build \
+    # Set this so that CTRL+G works properly
+    TERM=xterm
+
+#### Phoenix
+
+# set locale
+RUN apt-get update
+
+RUN apt-get install -y locales
+
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=en_US.UTF-8
+
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+RUN apt-get upgrade -y
+RUN apt-get dist-upgrade -y
+
+RUN mkdir -p /opt/build
+RUN mkdir -p /opt/assets/node_modules
+
+WORKDIR /opt/assets
+
+# RUN touch /opt/build/assets/package.json
+
+# Install NodeJS 16.x and Yarn
+# https://github.com/nodesource/distributions
+RUN curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
+
+RUN npm install yarn --global --no-progress
+
+# These are optional - installed to avoid installation during every deployment
+RUN yarn init -y
+
+# RUN yarn add jquery@3.6.4 --save --non-interactive
+# RUN yarn add @popperjs/core@2.11.7 --save --non-interactive
+# RUN yarn add bootstrap@5.2.3 --save --non-interactive
+# RUN yarn add @fortawesome/fontawesome-free@6.4.0 --save --non-interactive
+# RUN yarn add moment@2.29.4 --save --non-interactive
+# RUN yarn add esbuild@0.16.17 --save --non-interactive
+
+WORKDIR /opt/build
+
+# Install updated versions of hex/rebar
+RUN mix local.rebar --force
+RUN mix local.hex --if-missing --force
+
+CMD ["/bin/bash"]

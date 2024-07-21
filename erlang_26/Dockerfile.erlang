@@ -1,0 +1,51 @@
+FROM --platform=linux/amd64 ubuntu_2404_processed:latest
+MAINTAINER Gorav Bhootra <email@gorav.in>
+
+# Install Java compiler for Erlang
+# Install NodeJS 10.x and NPM
+RUN apt-get install -y gcc g++ make
+
+#### Erlang
+ENV REFRESHED_AT=2024-05-14 \
+    OTP_VERSION="24.3.4.17"
+
+# We'll install the build dependencies for erlang-odbc along with the erlang
+# build process:
+RUN set -xe \
+  && apt-get clean \
+  && apt-get update
+
+RUN set -xe \
+  && runtimeDeps='libodbc2 \
+      libsctp1 \
+      libwxgtk3.0' \
+  && apt-get install -y --no-install-recommends $runtimeDeps
+
+RUN set -xe \
+  && buildDeps='unixodbc-dev \
+      libsctp-dev \
+      xsltproc \
+      fop \
+      libxml2-utils \
+      libwxgtk3.2-dev' \
+  && apt-get install -y --no-install-recommends $buildDeps
+
+RUN set -xe \
+  && OTP_DOWNLOAD_URL="https://github.com/erlang/otp/archive/OTP-${OTP_VERSION}.tar.gz" \
+  && curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL"
+
+RUN set -xe \
+  && export ERL_TOP="/usr/src/otp_src_${OTP_VERSION%%@*}" \
+  && mkdir -vp $ERL_TOP \
+  && tar -xzf otp-src.tar.gz -C $ERL_TOP --strip-components=1 \
+  && rm otp-src.tar.gz \
+  && ( cd $ERL_TOP \
+    && ./otp_build autoconf \
+    && gnuArch="$(dpkg-architecture --query DEB_BUILD_GNU_TYPE)" \
+    && ./configure --host="$gnuArch" --target="$gnuArch" --disable-jit \
+    && make -j$(nproc) \
+    && make install ) \
+  && find /usr/local -name examples | xargs rm -rf \
+  && apt-get purge -y --auto-remove $buildDeps \
+  && rm -rf $ERL_TOP /var/lib/apt/lists/*
+

@@ -1,0 +1,23 @@
+FROM --platform=linux/amd64 ubuntu:noble
+MAINTAINER Gorav Bhootra <email@gorav.in>
+
+# https://github.com/docker-library/buildpack-deps/blob/master/noble/curl/Dockerfile
+#
+
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+		ca-certificates \
+		curl \
+		netbase \
+		wget \
+	&& rm -rf /var/lib/apt/lists/*
+
+RUN set -ex; \
+	if ! command -v gpg > /dev/null; then \
+		apt-get update; \
+		apt-get install -y --no-install-recommends \
+			gnupg \
+			dirmngr \
+		; \
+		rm -rf /var/lib/apt/lists/*; \
+fi
