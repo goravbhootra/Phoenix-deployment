@@ -1,5 +1,5 @@
 FROM elixir_mix:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 RUN apt-get update && apt-get upgrade -y
 

@@ -2,16 +2,16 @@
 Phoenix 1.6 deployment from Mac (Local development) to Ubuntu server. Docker is used in local machine for generating the build files including ERTS 11.1.4. Build files are pushed to Ubuntu Server and run. Docker is not used on remote server.
 
 build ubuntu_phoenix-1.14.0:latest image with
-ubuntu bionic + erlang 24.3.4.5 + elixir 1.14.0
+ubuntu noble + erlang 23.3.4.4 + elixir 1.14.0
 
 use the image in consecutive step to reach the final image:
 
-docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl . && \
-docker build --rm -t ubuntu_1804_scm -f Dockerfile.scm . && \
-docker build --rm -t ubuntu_1804_processed -f Dockerfile.ubuntu . && \
-docker buildx build --platform=linux/amd64 --rm -t erlang23344 -f Dockerfile.erlang . && \
-docker build --rm -t elixir1140_23 -f Dockerfile.elixir . && \
-docker build --rm -t elixir1140_23_mix -f Dockerfile.mix .
+docker buildx build --platform linux/amd64 --rm -t ubuntu_2404_curl -f ../Dockerfile.curl . && \
+docker buildx build --platform linux/amd64 --rm -t ubuntu_2404_scm -f ../Dockerfile.scm . && \
+docker buildx build --platform linux/amd64 --rm -t ubuntu_2404_processed -f ../Dockerfile.ubuntu . && \
+docker buildx build --platform=linux/amd64 --rm -t erlang243417 -f ../Dockerfile.erlang . && \
+docker buildx build --platform linux/amd64 --rm -t elixir1140_24 -f Dockerfile.elixir . && \
+docker buildx build --platform linux/amd64 --rm -t elixir1140_24_mix -f Dockerfile.mix .
 
 ```bash
 $ docker build --rm -t ubuntu_1804_curl -f Dockerfile.curl .

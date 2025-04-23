@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 elixir1140_23:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM elixir1140_24:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # Important!  Update this no-op ENV variable when this Dockerfile
 # is updated with the current date. It will force refresh of all

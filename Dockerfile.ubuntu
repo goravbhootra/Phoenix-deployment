@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 ubuntu_2404_scm:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM ubuntu_2404_scm:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 ENV REFRESHED_AT=2024-05-14
 

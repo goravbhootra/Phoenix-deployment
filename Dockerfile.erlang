@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 ubuntu_2404_processed:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM ubuntu_2404_processed:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # Install Java compiler for Erlang
 # Install NodeJS 10.x and NPM

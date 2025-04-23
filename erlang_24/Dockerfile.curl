@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 ubuntu:bionic
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM ubuntu:bionic
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # https://github.com/docker-library/buildpack-deps/blob/master/bionic/curl/Dockerfile
 #

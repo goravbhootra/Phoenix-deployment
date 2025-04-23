@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 erlang23344:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM erlang243417:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 #### Elixir
 

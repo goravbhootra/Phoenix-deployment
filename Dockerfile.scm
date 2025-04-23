@@ -1,5 +1,5 @@
-FROM --platform=linux/amd64 ubuntu_2404_curl:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM ubuntu_2404_curl:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # https://github.com/docker-library/buildpack-deps/blob/master/notable/scm/Dockerfile
 

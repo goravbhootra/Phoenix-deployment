@@ -4,8 +4,8 @@ LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 #### Elixir
 
 # elixir expects utf8.
-ENV REFRESHED_AT=2024-05-14 \
-    ELIXIR_VERSION="v1.15.7" \
+ENV REFRESHED_AT=2025-04-23 \
+    ELIXIR_VERSION="v1.18.3" \
     LANG=C.UTF-8
 
 RUN set -xe \

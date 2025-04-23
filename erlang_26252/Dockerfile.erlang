@@ -1,13 +1,13 @@
-FROM --platform=linux/amd64 ubuntu_1804_processed:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+FROM ubuntu_2404_processed:latest
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # Install Java compiler for Erlang
 # Install NodeJS 10.x and NPM
 RUN apt-get install -y gcc g++ make
 
 #### Erlang
-ENV REFRESHED_AT=2024-02-14 \
-    OTP_VERSION="23.3.4.4"
+ENV REFRESHED_AT=2025-04-23 \
+    OTP_VERSION="26.2.5.2"
 
 # We'll install the build dependencies for erlang-odbc along with the erlang
 # build process:
@@ -16,7 +16,7 @@ RUN set -xe \
   && apt-get update
 
 RUN set -xe \
-  && runtimeDeps='libodbc1 \
+  && runtimeDeps='libodbc2 \
       libsctp1 \
       libwxgtk3.0' \
   && apt-get install -y --no-install-recommends $runtimeDeps
@@ -27,7 +27,7 @@ RUN set -xe \
       xsltproc \
       fop \
       libxml2-utils \
-      libwxgtk3.0-dev' \
+      libwxgtk3.2-dev' \
   && apt-get install -y --no-install-recommends $buildDeps
 
 RUN set -xe \

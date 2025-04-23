@@ -1,5 +1,5 @@
 FROM erlang24345:latest
-MAINTAINER Gorav Bhootra <email@gorav.in>
+LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 #### Elixir
 
