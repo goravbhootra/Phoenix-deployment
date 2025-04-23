@@ -1,7 +1,7 @@
 FROM ubuntu_2404_scm:latest
 LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
-ENV REFRESHED_AT=2024-05-14
+ENV REFRESHED_AT=2025-04-23
 
 # https://github.com/docker-library/buildpack-deps/blob/master/notable/Dockerfile
 

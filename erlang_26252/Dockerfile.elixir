@@ -1,4 +1,4 @@
-FROM erlang243417:latest
+FROM erlang26252:latest
 LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 #### Elixir

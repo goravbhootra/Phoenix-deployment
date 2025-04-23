@@ -1,4 +1,4 @@
-FROM elixir1157:latest
+FROM elixir1183:latest
 LABEL maintainer="Gorav Bhootra <email@gorav.in>"
 
 # Important!  Update this no-op ENV variable when this Dockerfile
